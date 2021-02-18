@@ -1,0 +1,22 @@
+﻿using System;
+using UnityEngine;
+
+namespace Chess.Game
+{
+    [CreateAssetMenu(menuName = "Theme/Board")]
+    public class BoardTheme : ScriptableObject
+    {
+        public SquareColours lightSquares;
+        public SquareColours darkSquares;
+
+        [Serializable]
+        public struct SquareColours
+        {
+            public Color normal;
+            public Color legal;
+            public Color selected;
+            public Color moveFromHighlight;
+            public Color moveToHighlight;
+        }
+    }
+}
