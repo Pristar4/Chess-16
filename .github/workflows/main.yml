@@ -1,2 +1,12 @@
-- name: Unity - Builder
-  uses: game-ci/unity-builder@v2.0-alpha-6
+name: Unity - Build
+
+on:
+  push: { branches: [main] }
+  
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE}}
+  
+jobs:
+  build:
+    name: Unity - Builder
+    runs-on: game-ci/unity-builder@v2.0-alpha-6
