@@ -414,11 +414,11 @@ namespace Chess
             plyCount = 0;
             fiftyMoveCounter = 0;
 
-            knights = new[] {new PieceList(10), new PieceList(10)};
-            pawns = new[] {new PieceList(8), new PieceList(8)};
-            rooks = new[] {new PieceList(10), new PieceList(10)};
-            bishops = new[] {new PieceList(10), new PieceList(10)};
-            queens = new[] {new PieceList(9), new PieceList(9)};
+            knights = new[] {new PieceList(18), new PieceList(18)};
+            pawns = new[] {new PieceList(16), new PieceList(16)};
+            rooks = new[] {new PieceList(24), new PieceList(24)};
+            bishops = new[] {new PieceList(18), new PieceList(18)};
+            queens = new[] {new PieceList(17), new PieceList(17)};
             var emptyList = new PieceList(0);
             allPieceLists = new[]
             {

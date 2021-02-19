@@ -244,28 +244,33 @@ namespace Chess.Game
             }
         }
 
-        /*Result GetGameState () {
-            MoveGenerator moveGenerator = new MoveGenerator ();
-            var moves = moveGenerator.GenerateMoves (board);
+        Result GetGameState()
+        {
+            MoveGenerator moveGenerator = new MoveGenerator();
+            var moves = moveGenerator.GenerateMoves(board);
 
             // Look for mate/stalemate
-            if (moves.Count == 0) {
-                if (moveGenerator.InCheck ()) {
+            if (moves.Count == 0)
+            {
+                if (moveGenerator.InCheck())
+                {
                     return (board.WhiteToMove) ? Result.WhiteIsMated : Result.BlackIsMated;
                 }
+
                 return Result.Stalemate;
             }
 
             // Fifty move rule
-            if (board.fiftyMoveCounter >= 100) {
+            if (board.fiftyMoveCounter >= 100)
+            {
                 return Result.FiftyMoveRule;
             }
 
             // Threefold repetition
-            int repCount = board.RepetitionPositionHistory.Count ((x => x == board.ZobristKey));
-            if (repCount == 3) {
-                return Result.Repetition;
-            }
+            // int repCount = board.RepetitionPositionHistory.Count ((x => x == board.ZobristKey));
+            // if (repCount == 3) {
+            //     return Result.Repetition;
+            // }
 
             // Look for insufficient material (not all cases implemented yet)
             int numPawns = board.pawns[Board.WhiteIndex].Count + board.pawns[Board.BlackIndex].Count;
@@ -274,14 +279,16 @@ namespace Chess.Game
             int numKnights = board.knights[Board.WhiteIndex].Count + board.knights[Board.BlackIndex].Count;
             int numBishops = board.bishops[Board.WhiteIndex].Count + board.bishops[Board.BlackIndex].Count;
 
-            if (numPawns + numRooks + numQueens == 0) {
-                if (numKnights == 1 || numBishops == 1) {
+            if (numPawns + numRooks + numQueens == 0)
+            {
+                if (numKnights == 1 || numBishops == 1)
+                {
                     return Result.InsufficientMaterial;
                 }
             }
 
             return Result.Playing;
-        }*/
+        }
 
         private void CreatePlayer(ref Player player, PlayerType playerType)
         {
