@@ -1,4 +1,4 @@
-name: Build project
+name: Unity - Builder
 
 on:
   pull_request: {}
@@ -33,10 +33,10 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: game-ci/unity-builder@<version>
+      - uses: game-ci/unity-builder@v2.0-apha-6
         with:
           projectPath: ${{ matrix.projectPath }}
-          unityVersion: ${{ matrix.unityVersion }}
+          unityVersion: ${{ matrix.2021.2.0a5 }}
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v1
         with:
